@@ -1,15 +1,17 @@
-import User from "./Components/User/User";
+import UserInput from "./Components/User/UserInput";
 import './App.css';
 import UserList from "./Components/User/UserList";
+
+const data =['item1', 'item2']
 
 function App() {
   return (
     <div>
       <section id="goal-form">
-        <User/>
+        <UserInput/>
       </section>
       <section id="goals">
-        <UserList/>
+        <UserList inputs={data}/>
       </section>
       
     </div>

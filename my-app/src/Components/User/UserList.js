@@ -1,16 +1,11 @@
-
-
-
+import UserItem from './UserItem'
 
 const UserList = (props) => {
-
-
+    const listOfInputs = props.inputs;
 
     return(<div>
         <ul>
-            <li>item1</li>
-            <li>item2</li>
-            <li>item3</li>
+            {listOfInputs.map(input => <UserItem />)}
         </ul>
     </div>);
     

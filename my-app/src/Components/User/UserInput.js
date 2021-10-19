@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './User.module.css';
+import styles from './UserInput.module.css';
 
-const User = props => {
+const UserInput = props => {
     return (  
         <form className={styles.form1}>
             <div className={styles['form-control']}>
@@ -15,4 +15,4 @@ const User = props => {
     );
 };
 
-export default User;
+export default UserInput;
