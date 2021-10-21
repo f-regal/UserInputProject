@@ -3,7 +3,7 @@ const UserItem = (props) => {
     
 
     return (<div>
-        <li>{}</li>
+        <li>{props.children}</li>
     </div>)
     
 }

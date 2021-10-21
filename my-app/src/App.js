@@ -1,17 +1,30 @@
 import UserInput from "./Components/User/UserInput";
 import './App.css';
 import UserList from "./Components/User/UserList";
-
-const data =['item1', 'item2']
+import React, {useState} from 'react'
 
 function App() {
+
+const [userInputs, setUserInputs] = useState([{text: 'user1',age: 34, id: 1},{text: 'user2',age: 48, id: 2}])
+
+const onAddUserInput = (enteredInput1, enteredInput2) => {
+  setUserInputs(prevUserInputs => {
+    const updateUserInputs = [...prevUserInputs];
+    updateUserInputs.push({text: {enteredInput1} ,age:{enteredInput2}, id: Math.random().toString()});
+    return updateUserInputs;
+  });
+};
+
+
+
+
   return (
     <div>
       <section id="goal-form">
-        <UserInput/>
+        <UserInput addUserInput ={onAddUserInput}/>
       </section>
       <section id="goals">
-        <UserList inputs={data}/>
+        <UserList items={userInputs}/>
       </section>
       
     </div>

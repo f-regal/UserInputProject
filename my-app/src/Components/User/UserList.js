@@ -1,11 +1,11 @@
 import UserItem from './UserItem'
 
 const UserList = (props) => {
-    const listOfInputs = props.inputs;
-
     return(<div>
         <ul>
-            {listOfInputs.map(input => <UserItem />)}
+            {props.items.map(item => <UserItem key={item.id} >
+                {`${item.text} (${item.age} years old)`}
+                </UserItem >)}
         </ul>
     </div>);
     
