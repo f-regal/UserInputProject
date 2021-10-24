@@ -10,7 +10,8 @@ const [userInputs, setUserInputs] = useState([{text: 'user1',age: 34, id: 1},{te
 const onAddUserInput = (enteredInput1, enteredInput2) => {
   setUserInputs(prevUserInputs => {
     const updateUserInputs = [...prevUserInputs];
-    updateUserInputs.push({text: {enteredInput1} ,age:{enteredInput2}, id: Math.random().toString()});
+    updateUserInputs.push({text: enteredInput1 ,age:enteredInput2, id: Math.random().toString()});
+    console.log(updateUserInputs);
     return updateUserInputs;
   });
 };
