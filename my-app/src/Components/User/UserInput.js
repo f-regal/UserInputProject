@@ -16,19 +16,16 @@ const UserInput = props => {
 
     const formSubmitHandler = (e) => {
     e.preventDefault();
+
+    //props.InvalidMessageHandler(EnteredUsername, EnteredAge)
     props.addUserInput(EnteredUsername, EnteredAge);
+
     
     setEnteredUsername("");
     setEnteredAge("");  
     };
 
-    // if (EnteredUsername.trim.length === 0 || EnteredAge.trim.length === 0  ) {
-    //     let message = "please enter a valid name and age (non-empty values)"
-    //     console.log(message)
-    // } else if (parseInt(EnteredAge) < 0) {
-    //     let message2 = "Please enter a valid age (>0)";
-    //     console.log(message2)
-    // }
+    
     
 
 
