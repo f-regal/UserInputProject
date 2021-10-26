@@ -1,11 +1,11 @@
-import styles from './Modal.module.css';
+//import styles from './Modal.module.css';
 
 
 const Modal = (props) => {
 
     return (
         <div>
-            {props.message}
+            <h1>{props.message}</h1>
         </div>
     );
 }

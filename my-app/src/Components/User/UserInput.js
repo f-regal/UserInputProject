@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styles from './UserInput.module.css';
+import Modal from '../Modal/Modal';
 
 
 const UserInput = props => {
@@ -14,26 +15,30 @@ const UserInput = props => {
         setEnteredAge(e.target.value);
     }
 
+    const [ErrorMessage, setErrorMessage] = useState('');
+
     const formSubmitHandler = (e) => {
     e.preventDefault();
+    const message1 = "please enter a valid name and age (non-empty values)"
+    const message2 = "Please enter a valid age (>0)"
+   
+    if (EnteredUsername.trim().length === 0 && EnteredAge.trim().length === 0 ) {
+      setErrorMessage(message1)
+      console.log(ErrorMessage); 
+    } else if (EnteredAge < 1) {
+      setErrorMessage(message2)
+      console.log(ErrorMessage); 
+    } 
 
-    //props.InvalidMessageHandler(EnteredUsername, EnteredAge)
+    
     props.addUserInput(EnteredUsername, EnteredAge);
-
+    props.onError(ErrorMessage);
     
     setEnteredUsername("");
-    setEnteredAge("");  
-    };
+    setEnteredAge(""); 
+};
 
     
-    
-
-
-
-
-
-
-
 
     return (  
         <form onSubmit={formSubmitHandler} className={styles.form1}>
