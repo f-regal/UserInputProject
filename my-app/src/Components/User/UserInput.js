@@ -15,24 +15,36 @@ const UserInput = props => {
         setEnteredAge(e.target.value);
     }
 
-    const [ErrorMessage, setErrorMessage] = useState('');
+    const [ErrorMessage, setErrorMessage] = useState();
+
+
+    const errorClickHandler = () => {
+      setErrorMessage();
+    }
+
 
     const formSubmitHandler = (e) => {
     e.preventDefault();
-    const message1 = "please enter a valid name and age (non-empty values)"
-    const message2 = "Please enter a valid age (>0)"
-   
+  
     if (EnteredUsername.trim().length === 0 && EnteredAge.trim().length === 0 ) {
-      setErrorMessage(message1)
-      console.log(ErrorMessage); 
-    } else if (EnteredAge < 1) {
-      setErrorMessage(message2)
-      console.log(ErrorMessage); 
-    } 
-
-    
+      setErrorMessage({
+        title: 'Invalid Message',
+        message: 'please enter a valid name and age (non-empty values)'
+      });  
+      return;
+     } 
+     
+     if (EnteredAge < 1) {
+      setErrorMessage({
+        title: 'Invalid Message',
+        message: 'Please enter a valid age (>0)'
+      }); 
+ 
+      return;
+    }
+  
     props.addUserInput(EnteredUsername, EnteredAge);
-    props.onError(ErrorMessage);
+    
     
     setEnteredUsername("");
     setEnteredAge(""); 
@@ -41,6 +53,7 @@ const UserInput = props => {
     
 
     return (  
+      <div>
         <form onSubmit={formSubmitHandler} className={styles.form1}>
             <div className={styles['form-control']}>
             <label>Username</label>
@@ -49,7 +62,9 @@ const UserInput = props => {
             <input type="text" value={EnteredAge} onChange={ageHandler}/>
             </div>
             <button type="submit">Add User</button>
-      </form>
+       </form>
+       {ErrorMessage && <Modal error={ErrorMessage} onErrorOkay={errorClickHandler}/>}
+       </div>
     );
 };
 

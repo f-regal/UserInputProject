@@ -2,7 +2,7 @@ import UserInput from "./Components/User/UserInput";
 import './App.css';
 import UserList from "./Components/User/UserList";
 import React, {useState} from 'react'
-import Modal from './Components/Modal/Modal'
+
 
 function App() {
 
@@ -21,19 +21,16 @@ const onAddUserInput = (enteredInput1, enteredInput2) => {
 
 //create a function to retrieve the errormessage from UserInput
 
-  let content;
-  const errorHandler = (error) => {
-    content = <Modal message={error}></Modal>
-  }
+  //let content;
+  // const errorHandler = (error) => {
+  //   content = <Modal message={error}></Modal>
+  // }
 
 
   return (
     <div>
       <section id="goal-form">
-        <UserInput addUserInput ={onAddUserInput} onError={errorHandler} />
-      </section>
-      <section>
-      <Modal />
+        <UserInput addUserInput ={onAddUserInput} />
       </section>
       <section id="goals">
         <UserList items={userInputs}/>
