@@ -25,14 +25,14 @@ const UserInput = props => {
 
     if (EnteredUsername.trim().length === 0 && EnteredAge.trim().length === 0 ) {
       setErrorMessage({
-        title: 'Invalid Message',
+        title: 'Invalid Input',
         message: 'please enter a valid name and age (non-empty values)'
       });  
       return;
      } 
      if (EnteredAge < 1) {
       setErrorMessage({
-        title: 'Invalid Message',
+        title: 'Invalid Input',
         message: 'Please enter a valid age (>0)'
       }); 
       return;
