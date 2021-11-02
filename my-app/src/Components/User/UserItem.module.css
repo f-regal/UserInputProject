@@ -1,0 +1,14 @@
+
+  .list-item {
+    width: 500px;
+    display:inline-block;
+    position:relative; 
+    left:-54px;
+    margin: 5px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    list-style-type: none;
+    text-align: center;
+    background-color: white;
+  }

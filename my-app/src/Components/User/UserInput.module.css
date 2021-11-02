@@ -1,5 +1,6 @@
 .form-control {
     margin: 0.5rem 0;
+    background-color: white;
   }
   
   .form-control label {
@@ -23,12 +24,23 @@
     background: #fad0ec;
     border-color: #8b005d;
   }
-  
-  .form-control.invalid input {
-    border-color: red;
-    background-color: pink;
+
+  .button {
+    background-color: rgb(167, 78, 167);
+    border-radius: 2px;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    font-family:'Montserrat', sans-serif;
+    color: black;
   }
   
-  .form-control.invalid label {
-    color: red;
-  }
+  .button:hover {opacity: 1}
+  

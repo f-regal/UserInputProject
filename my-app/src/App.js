@@ -6,7 +6,7 @@ import React, {useState} from 'react'
 
 function App() {
 
-const [userInputs, setUserInputs] = useState([{text: 'user1',age: 34, id: 1},{text: 'user2',age: 48, id: 2}])
+const [userInputs, setUserInputs] = useState([{text: 'John',age: 34, id: 1},{text: 'Mike',age: 48, id: 2}])
 
 
 const onAddUserInput = (enteredInput1, enteredInput2) => {
@@ -18,17 +18,8 @@ const onAddUserInput = (enteredInput1, enteredInput2) => {
     });
 };
 
-
-//create a function to retrieve the errormessage from UserInput
-
-  //let content;
-  // const errorHandler = (error) => {
-  //   content = <Modal message={error}></Modal>
-  // }
-
-
   return (
-    <div>
+    <div id="page">
       <section id="goal-form">
         <UserInput addUserInput ={onAddUserInput} />
       </section>
